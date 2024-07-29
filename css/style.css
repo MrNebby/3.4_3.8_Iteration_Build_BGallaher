@@ -1,0 +1,383 @@
+/* CSS for Graeme's Music website */
+
+/* CSS for text starts here */
+p {
+	color: #fff;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+h1 {
+	color: #fff;
+	text-align: center;
+}
+
+h2 {
+	color: #fff;
+	text-align: center;
+}
+
+h3 {
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+}
+
+label {
+	color: #fff;
+	padding: 12px 12px 12px 0px;
+	display: inline-block;
+}
+
+.return_link {
+	padding-left: 10%;
+}
+
+/* CSS for text ends here */
+
+/* CSS for the divs and body elements starts here */
+body {
+	background: #000;
+}
+
+.header {
+	width: 100%;
+	height: 100%;
+	max-height: 400px;
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: start;
+	background: #000;
+	overflow: hidden;
+}
+
+.logo {
+	flex: 20%;
+}
+
+.header_text {
+	flex: 60%;
+	text-align: center;
+}
+
+.user_info {
+	flex: 20%;
+	float: right;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.slider {
+	width: 100%;
+	height: 300px;
+	background: #000;
+}
+
+.login_form {
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.main_container {
+	max-height: 825px;
+	height: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.playlist_links {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.playlist_links a {
+	flex: 50%;
+	text-align: center;
+}
+
+.playlist1_link {
+	height: 100px;
+	background: #00f;
+}
+
+.playlist2_link {
+	height: 100px;
+	background: #f0f;
+}
+
+/* Media query to change how the playlist links works between desktop and mobile */
+@media only screen and (min-width: 601px) {
+	.playlist_links {
+		flex-direction: row;
+		column-gap: 10px;
+	}
+}
+
+.search_bar {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.search_bar input[type=text] {
+	width: 50%;
+	padding: 12px;
+	border: 1px solid #ccc;
+}
+
+.search_bar input[type=submit] {
+	background: #0f0;
+	padding: 15px 30px;
+	border: none;
+	cursor: pointer;
+}
+
+.contact_form {
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.account_forms {
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+.footer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: start;
+	background: #000;
+}
+
+.copyright {
+	flex: 70%;
+}
+
+.contact {
+	flex: 30%;
+	text-align: right;
+}
+
+.contact_mobile {
+	display: block;
+}
+
+.contact_desktop {
+	display: none;
+}
+
+/* Media query to change what the contact link says between desktop and mobile */
+@media only screen and (min-width: 601px) {
+	.contact_mobile {
+		display: none;
+	}
+	
+	.contact_desktop {
+		display: block;
+	}
+}
+
+/* CSS for the divs and body elements ends here */
+
+/* CSS for the admin nav starts here */
+.nav {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.nav ul {
+	list-style: none;
+	margin-top: 10px;
+	float: center;
+}
+
+.nav ul li {
+	display: inline-block;
+	margin: 0px 5px 0px 5px;
+}
+
+.nav ul li a {
+	text-decoration: none;
+}
+
+/* CSS for the admin nav ends here */
+
+/* CSS for forms starts here */
+.form_container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: start;
+}
+
+.labels {
+	flex: 25%;
+	float: right;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.entries {
+	flex: 75%;
+	padding-left: 5px;
+	margin-right: 15%;
+}
+
+.entries input[type=text], .entries input[type=password], .entries input[type=email] {
+	width: 95%;
+	padding: 12px;
+	border: 1px solid #ccc;
+}
+
+.entries textarea {
+	width: 95%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	height: 180px;
+	resize: none;
+}
+
+.entries input[type=submit] {
+	background: #0f0;
+	padding: 15px 30px;
+	border: none;
+	cursor: pointer;
+	float: right;
+}
+
+/* CSS for forms ends here */
+
+/* CSS for the query displays starts here */
+.genre_container ul {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.genre_container ul li {
+	display: inline-block;
+	padding-bottom: 30px;
+	width: 50%;
+	text-align: center;
+}
+
+/* Media query to change how many query boxes appear links work between desktop and mobile */
+@media only screen and (min-width: 601px) {
+	.genre_container ul li {
+		width: 25%;
+	}
+}
+
+.genre_data_container {
+	width: 100%;
+	white-space: wrap;
+	display: grid;
+	grid-gap: 5%;
+	grid-template-rows: 14% 14% 14% 14% 14% 14%;
+	grid-template-columns: 100%;
+}
+
+.genre_data {
+	text-align: center;
+	height: 25px;
+	font-size: 80%;
+}
+
+.playlist_container, .search_container {
+	max-height: 825px;
+	height: 100%;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.field_headings_mobile {
+	width: 100%;
+	display: grid;
+	grid-gap: 2%;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-template-rows: 26px;
+	padding-bottom: 4px;
+	justify-content: center;
+}
+
+.field_headings_desktop {
+	display: none;
+}
+
+/* Media query to change how much info is given between desktop and mobile */
+@media only screen and (min-width: 601px) {
+	.field_headings_mobile {
+		display: none;
+	}
+	
+	.field_headings_desktop {
+	width: 100%;
+	display: grid;
+	grid-gap: 2%;
+	grid-template-columns: 12% 12% 12% 12% 12% 12% 12%;
+	grid-template-rows: 26px;
+	padding-bottom: 4px;
+	justify-content: center;
+	}
+}
+
+.heading_box {
+	border: 2px solid #555;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	text-align: center;
+	background-color: #e816e8;
+	height: 30px;
+}
+
+.field_data_mobile {
+	width: 100%;
+	display: grid;
+	grid-gap: 2%;
+	grid-template-columns: 23% 23% 23% 23%;
+	grid-template-rows: auto;
+	padding-top: 4px;
+	justify-content: center;
+}
+
+.field_data_desktop {
+	display: none;
+}
+
+/* Media query to change how much info is given between desktop and mobile */
+@media only screen and (min-width: 601px) {
+	.field_data_mobile {
+		display: none;
+	}
+	
+	.field_data_desktop {
+	width: 100%;
+	display: grid;
+	grid-gap: 2%;
+	grid-template-columns: 12% 12% 12% 12% 12% 12% 12%;
+	grid-template-rows: auto;
+	padding-top: 4px;
+	justify-content: center;
+	}
+}
+
+.data_box {
+	text-align: center;
+	height: auto;
+}
+
+/* CSS for query displays ends here */
