@@ -1,36 +1,89 @@
 /* CSS for Graeme's Music website */
 
+/* CSS for Google Fonts is below */
+@import url('https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100..900;1,100..900&display=swap'); /* Heading font */
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); /* Regular text font */
+
 /* CSS for text starts here */
 p {
 	color: #fff;
 	padding-left: 5px;
 	padding-right: 5px;
+	font-size: 1em;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 h1 {
 	color: #fff;
 	text-align: center;
+	font-size: 1.85em;
+	font-family: "REM", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: bold;
+	font-style: normal;
 }
 
 h2 {
 	color: #fff;
 	text-align: center;
+	font-size: 1.5em;
+	font-family: "REM", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: bold;
+	font-style: normal;
 }
 
 h3 {
 	color: #fff;
 	text-align: center;
 	margin: 0 auto;
+	font-size: 1em;
+	font-family: "REM", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: bold;
+	font-style: normal;
 }
 
 label {
 	color: #fff;
 	padding: 12px 12px 12px 0px;
 	display: inline-block;
+	font-size: 1em;
+	font-family: "REM", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: bold;
+	font-style: normal;
+}
+
+input, textarea {
+	font-size: 1em;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .return_link {
 	padding-left: 10%;
+}
+
+/* CSS for link colours */
+a:link {
+	color: #57cdff;
+}
+
+a:visited {
+	color: #4dbae8;
+}
+
+a:hover {
+	color: #419dc4;
+}
+
+a:active {
+	color: #4dbae8;
 }
 
 /* CSS for text ends here */
@@ -68,12 +121,87 @@ body {
 	padding-right: 5px;
 }
 
+/* Image slideshow CSS begins */
 .slider {
 	width: 100%;
 	height: 300px;
-	background: #000;
+	position: relative;
+	margin: auto;
 }
 
+.slider_heading {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	text-align: center;
+}
+
+.slides {
+	display: none;
+}
+
+.slides img {
+	color: #fff;
+}
+
+.prev, .next {
+	color: #fff;
+	font-size: 1em;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	transition: 0.6s ease;
+	user-select: none;
+	box-sizing: border-box;
+	border-radius: 0 3px 3px 0;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background: #222;
+}
+
+.dot_container {
+	text-align: center;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4;}
+	to {opacity: 1;}
+}
+
+/* Image slideshow CSS ends */
+
+/* CSS for the divs and body elements resumes here */
 .login_form {
 	width: 100%;
 	height: 100%;
@@ -98,6 +226,7 @@ body {
 .playlist_links a {
 	flex: 50%;
 	text-align: center;
+	text-decoration: none;
 }
 
 .playlist1_link {
@@ -131,8 +260,8 @@ body {
 }
 
 .search_bar input[type=submit] {
-	background: #0f0;
-	padding: 15px 30px;
+	background: #92ed39;
+	padding: 12px 24px;
 	border: none;
 	cursor: pointer;
 }
@@ -204,10 +333,10 @@ body {
 .nav ul li {
 	display: inline-block;
 	margin: 0px 5px 0px 5px;
-}
-
-.nav ul li a {
-	text-decoration: none;
+	font-size: 1em;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 /* CSS for the admin nav ends here */
@@ -247,7 +376,7 @@ body {
 }
 
 .entries input[type=submit] {
-	background: #0f0;
+	background: #92ed39;
 	padding: 15px 30px;
 	border: none;
 	cursor: pointer;
@@ -294,6 +423,9 @@ body {
 	text-align: center;
 	height: 25px;
 	font-size: 80%;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .playlist_container, .search_container {
@@ -335,12 +467,12 @@ body {
 }
 
 .heading_box {
-	border: 2px solid #555;
+	border: 2px solid #4a2e61;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	text-align: center;
-	background-color: #e816e8;
+	background-color: #5c3878;
 	height: 30px;
 }
 

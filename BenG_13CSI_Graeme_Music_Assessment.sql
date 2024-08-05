@@ -2,8 +2,8 @@
 --
 -- Host: localhost	Database: BenG_13CSI_Graeme_Music_Assessment
 -- ------------------------------------------------------
--- Server version 	8.0.37-0ubuntu0.22.04.3
--- Date: Mon, 29 Jul 2024 21:05:36 +0000
+-- Server version 	8.0.39-0ubuntu0.22.04.1
+-- Date: Mon, 05 Aug 2024 22:04:53 +0000
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -273,4 +273,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on: Mon, 29 Jul 2024 21:05:36 +0000
+-- Dump completed on: Mon, 05 Aug 2024 22:04:53 +0000

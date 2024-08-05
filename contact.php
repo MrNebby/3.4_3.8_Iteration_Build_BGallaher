@@ -49,10 +49,13 @@ session_start();
 		
 		<!-- The contact form for the contact page -->
 		<div class="contact_form">
+
 			<!-- php will be used to change link depending on if the user is logged in -->
 			<p class="return_link"><a href="<?php if(!isset($_SESSION['login_user'])) {echo 'login.php';} else {echo 'index.php';} ?>">Return</a></p>
 			<h1>Contact Us</h1>
+
 			<br>
+
 			<form method="post" id="contact">
 				<div class="form_container">
 
@@ -79,6 +82,7 @@ session_start();
 					</div>
 				</div>
 			</form>
+
 			<?php
 			//Connection to the server
 			require "13CSI_Graeme_Music_Assessment_mysqli.php";

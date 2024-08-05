@@ -62,8 +62,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		<!-- This will have an image slider -->
 		<div class="slider">
-			<h1>Login to see all of Graeme's tunes</h1>
-			<p>Placeholder for an image slider</p>
+			<h1 class="slider_heading">Login to see all of Graeme's tunes</h1>
+			<div class="slides fade">
+				<img src="images/" alt="First image">
+			</div>
+			
+			<div class="slides fade">
+				<img src="images/" alt="Second image">
+			</div>
+			
+			<div class="slides fade">
+				<img src="images/" alt="Third image">
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a>
+			<a class="next" onclick="plusSlides(1)">❯</a>
+		</div>
+		
+		<!-- This allows the users to select a specific image slide -->
+		<div class="dot_container">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
 		</div>
 		
 		<!-- This is the login form so that users can login properly -->
@@ -103,5 +123,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 				<p class="contact_desktop">Need something? <a href="contact.php">Contact us here</a></p>
 			</div>
 		</div>
+		<script type="text/javascript" src="js/slider.js"></script>
 	</body>
 </html>
