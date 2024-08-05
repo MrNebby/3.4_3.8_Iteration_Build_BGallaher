@@ -58,10 +58,12 @@ if($user != 'Graeme') {
 		
 		<!-- The form to create a new account -->
 		<div class="account_forms">
-			<!-- php will be used to change link depending on if the user is logged in -->
-			<p class="return_link"><a href="<?php if(!isset($_SESSION['login_user'])) {echo 'login.php';} else {echo 'index.php';} ?>">Return</a></p>
+			<!-- Link that goes back to index page -->
+			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Create an account</h1>
+
 			<br>
+
 			<form method="post" id="new_account">
 				<div class="form_container">
 
@@ -88,6 +90,7 @@ if($user != 'Graeme') {
 					</div>
 				</div>
 			</form>
+
 			<?php
 			//Connection to the server
 			require "13CSI_Graeme_Music_Assessment_mysqli.php";

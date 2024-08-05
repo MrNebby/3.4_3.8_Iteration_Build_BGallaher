@@ -49,6 +49,7 @@ if(!isset($_SESSION['login_user'])) {
 		
 		<!-- Display the playlist and allow the user to go back to the main page -->
 		<div class="playlist_container">
+			<!-- A link to return the user to the main page -->
 			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Presenting Graeme's alphabetical genres playlist</h1>
 			
