@@ -21,7 +21,6 @@ h1 {
 	text-align: center;
 	font-size: 1.85em;
 	font-family: "REM", sans-serif;
-	font-optical-sizing: auto;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -31,7 +30,6 @@ h2 {
 	text-align: center;
 	font-size: 1.5em;
 	font-family: "REM", sans-serif;
-	font-optical-sizing: auto;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -42,7 +40,6 @@ h3 {
 	margin: 0 auto;
 	font-size: 1em;
 	font-family: "REM", sans-serif;
-	font-optical-sizing: auto;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -53,7 +50,6 @@ label {
 	display: inline-block;
 	font-size: 1em;
 	font-family: "REM", sans-serif;
-	font-optical-sizing: auto;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -96,17 +92,23 @@ body {
 .header {
 	width: 100%;
 	height: 100%;
-	max-height: 400px;
+	max-height: 200px;
 	position: relative;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: start;
+	align-items: center;
 	background: #000;
 	overflow: hidden;
 }
 
 .logo {
 	flex: 20%;
+}
+
+.logo img {
+	max-width: clamp(100px, 60%, 300px);
+	height: auto;
 }
 
 .header_text {
@@ -134,14 +136,41 @@ body {
 	position: absolute;
 	top: 0;
 	text-align: center;
+	z-index: 1;
 }
 
 .slides {
 	display: none;
 }
 
-.slides img {
-	color: #fff;
+.slide1 {
+	background-image: url(./../images/graeme_slideshow1_v2.png);
+	background-color: #a861c3; /* Incase the image doesn't load */
+	height: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.slide2 {
+	background-image: url(./../images/graeme_slideshow2_v1.png);
+	background-color: #6161c3; /* Incase the image doesn't load */
+	height: 300px;
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+.slide3 {
+	background-image: url(./../images/graeme_slideshow3_v2.png);
+	background-color: #61a861; /* Incase the image doesn't load */
+	height: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
 .prev, .next {
@@ -209,7 +238,7 @@ body {
 }
 
 .main_container {
-	max-height: 825px;
+	max-height: 760px;
 	height: 100%;
 	overflow: scroll;
 	overflow-x: hidden;
@@ -230,17 +259,27 @@ body {
 }
 
 .playlist1_link {
+	background-image: url(./../images/graeme_playlist_link1_v2.png);
+	background-color: #2b478c; /* Incase the image doesn't load */
 	height: 100px;
-	background: #00f;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
 .playlist2_link {
+	background-image: url(./../images/graeme_playlist_link2_v2.png);
+	background-color: #5c3878; /* Incase the image doesn't load */
 	height: 100px;
-	background: #f0f;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
 
 /* Media query to change how the playlist links works between desktop and mobile */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 801px) {
 	.playlist_links {
 		flex-direction: row;
 		column-gap: 10px;
@@ -260,7 +299,7 @@ body {
 }
 
 .search_bar input[type=submit] {
-	background: #92ed39;
+	background: #92ed39 url(./../images/graeme_search_icon_v2.png) no-repeat center;
 	padding: 12px 24px;
 	border: none;
 	cursor: pointer;
@@ -305,7 +344,7 @@ body {
 }
 
 /* Media query to change what the contact link says between desktop and mobile */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 801px) {
 	.contact_mobile {
 		display: none;
 	}
@@ -327,7 +366,6 @@ body {
 .nav ul {
 	list-style: none;
 	margin-top: 10px;
-	float: center;
 }
 
 .nav ul li {
@@ -398,13 +436,14 @@ body {
 
 .genre_container ul li {
 	display: inline-block;
-	padding-bottom: 30px;
+	padding-bottom: 35px;
 	width: 50%;
 	text-align: center;
+	background: radial-gradient(circle, #53387d, #000000);
 }
 
 /* Media query to change how many query boxes appear links work between desktop and mobile */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 801px) {
 	.genre_container ul li {
 		width: 25%;
 	}
@@ -414,8 +453,8 @@ body {
 	width: 100%;
 	white-space: wrap;
 	display: grid;
-	grid-gap: 5%;
-	grid-template-rows: 14% 14% 14% 14% 14% 14%;
+	grid-gap: 7%;
+	grid-template-rows: 19% 10% 10% 10% 10% 10%;
 	grid-template-columns: 100%;
 }
 
@@ -429,7 +468,7 @@ body {
 }
 
 .playlist_container, .search_container {
-	max-height: 825px;
+	max-height: 760px;
 	height: 100%;
 	overflow: scroll;
 	overflow-x: hidden;
@@ -450,7 +489,7 @@ body {
 }
 
 /* Media query to change how much info is given between desktop and mobile */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 801px) {
 	.field_headings_mobile {
 		display: none;
 	}
@@ -468,8 +507,6 @@ body {
 
 .heading_box {
 	border: 2px solid #4a2e61;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	text-align: center;
 	background-color: #5c3878;
@@ -491,7 +528,7 @@ body {
 }
 
 /* Media query to change how much info is given between desktop and mobile */
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 801px) {
 	.field_data_mobile {
 		display: none;
 	}
