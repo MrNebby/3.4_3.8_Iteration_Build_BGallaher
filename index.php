@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -29,13 +29,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	
 	<body>
 		<!-- The header contains the logo, website name, and link to sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="index.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to the main page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -43,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
 				<p><a href="sign_out.php">Sign out</a></p>
 			</div>
 		</div>
@@ -82,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			<div class="search_bar">
 				<form method="post" id="search_bar">
 					<input type="text" name="search">
-					<input type="submit" value="Search">
+					<input type="submit" value="">
 				</form>
 				<p>Or view by genre in alphabetical order below</p>
 			</div>

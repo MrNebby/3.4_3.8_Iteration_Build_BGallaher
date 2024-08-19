@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -14,12 +14,14 @@ session_start();
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	<body>
 		<!-- The header contains the logo, website name, and link to login or sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="<?php if(!isset($_SESSION['login_user'])) {echo 'login.php';} else {echo 'index.php';} ?>"><img src="images/graeme_music_logo_v2.png" alt="Goes to <?php if(!isset($_SESSION['login_user'])) {echo 'login';} else {echo 'main';}?> page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -27,7 +29,7 @@ session_start();
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
 				<?php
 				if(!isset($_SESSION['login_user'])) {
 					echo "<p><a href='login.php'>Login</a></p>";
@@ -70,13 +72,13 @@ session_start();
 					</div>
 
 					<div class="entries">
-						<input type="text" name="name" placeholder="Enter your name here">
+						<input type="text" name="name" id="name" placeholder="Enter your name here">
 						<br><br>
-						<input type="email" name="email" placeholder="Enter your email address here">
+						<input type="email" name="email" id="email" placeholder="Enter your email address here">
 						<br><br>
-						<input type="text" name="phone" placeholder="Enter your phone number here">
+						<input type="text" name="phone" id="phone" placeholder="Enter your phone number here">
 						<br><br>
-						<textarea type="text" name="reason" placeholder="Why did you contact us?"></textarea>
+						<textarea name="reason" id="reason" placeholder="Why did you contact us?"></textarea>
 						<br><br>
 						<input type="submit" value="Submit">
 					</div>

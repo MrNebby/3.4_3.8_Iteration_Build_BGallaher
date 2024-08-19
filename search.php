@@ -8,7 +8,7 @@ if(!isset($_SESSION['login_user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -20,13 +20,15 @@ if(!isset($_SESSION['login_user'])) {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	
 	<body>
 		<!-- The header contains the logo, website name, and link to sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="index.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to main page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -34,7 +36,7 @@ if(!isset($_SESSION['login_user'])) {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
 				<p><a href="sign_out.php">Sign out</a></p>
 			</div>
 		</div>
@@ -50,6 +52,7 @@ if(!isset($_SESSION['login_user'])) {
 		
 		<!-- Display the playlist and allow the user to go back to the main page -->
 		<div class="search_container">
+
 			<!-- A link to return the user to the main page -->
 			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Searching for <?php echo $search; ?></h1>

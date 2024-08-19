@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -41,13 +41,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 
 	<body>
 		<!-- The header contains the logo, website name, and link to login-->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="login.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to the login page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -55,7 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
 				<p><a href="login.php">Login</a></p>
 			</div>
 		</div>
@@ -63,16 +65,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		<!-- This will have an image slider -->
 		<div class="slider">
 			<h1 class="slider_heading">Login to see all of Graeme's tunes</h1>
-			<div class="slides fade">
-				<img src="images/" alt="First image">
+			<div class="slides fade slide1">
 			</div>
 			
-			<div class="slides fade">
-				<img src="images/" alt="Second image">
+			<div class="slides fade slide2">
 			</div>
 			
-			<div class="slides fade">
-				<img src="images/" alt="Third image">
+			<div class="slides fade slide3">
 			</div>
 
 			<a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -100,9 +99,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 					</div>
 
 					<div class="entries">
-						<input type="text" name="username" placeholder="Enter your username here">
+						<input type="text" name="username" id="username" placeholder="Enter your username here">
 						<br><br>
-						<input type="password" name="password" placeholder="Enter your password here">
+						<input type="password" name="password" id="password" placeholder="Enter your password here">
 						<br><br>
 						<input type="submit" value="Login">
 					</div>
@@ -123,6 +122,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 				<p class="contact_desktop">Need something? <a href="contact.php">Contact us here</a></p>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/slider.js"></script>
+		<script src="js/slider.js"></script>
 	</body>
 </html>

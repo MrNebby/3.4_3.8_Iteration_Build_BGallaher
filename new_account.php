@@ -11,7 +11,7 @@ if($user != 'Graeme') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -23,12 +23,14 @@ if($user != 'Graeme') {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	<body>
 		<!-- The header contains the logo, website name, and link to login or sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="index.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to the main page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -36,14 +38,8 @@ if($user != 'Graeme') {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
-				<?php
-				if(!isset($_SESSION['login_user'])) {
-					echo "<p><a href='login.php'>Login</a></p>";
-				} else {
-					echo "<p><a href='sign_out.php'>Sign out</a></p>";
-				}
-				?>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
+				<p><a href='sign_out.php'>Sign out</a></p>
 			</div>
 		</div>
 		
@@ -58,6 +54,7 @@ if($user != 'Graeme') {
 		
 		<!-- The form to create a new account -->
 		<div class="account_forms">
+
 			<!-- Link that goes back to index page -->
 			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Create an account</h1>
@@ -78,13 +75,13 @@ if($user != 'Graeme') {
 					</div>
 
 					<div class="entries">
-						<input type="text" name="username" placeholder="Enter the username here">
+						<input type="text" name="username" id="username" placeholder="Enter the username here">
 						<br><br>
-						<input type="password" name="password" placeholder="Enter the password here">
+						<input type="password" name="password" id="password" placeholder="Enter the password here">
 						<br><br>
-						<input type="password" name="confirm_password" placeholder="Confirm entered password here">
+						<input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm entered password here">
 						<br><br>
-						<input type="email" name="email" placeholder="Enter email here">
+						<input type="email" name="email" id="email" placeholder="Enter email here">
 						<br><br>
 						<input type="submit" value="Create Account">
 					</div>
@@ -103,6 +100,7 @@ if($user != 'Graeme') {
 				$email = $_POST['email'];
 
 				if($password == $confirm_password) {
+
 					//Creating a variable to store the query to add users
 					$insert_query = "INSERT INTO graeme_music_user(user_id, password, email) VALUES( '$username', '$password', '$email')";
 

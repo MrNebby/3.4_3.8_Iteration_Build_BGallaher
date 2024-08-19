@@ -11,7 +11,7 @@ if($user != 'Graeme') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -23,12 +23,14 @@ if($user != 'Graeme') {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	<body>
 		<!-- The header contains the logo, website name, and link to login or sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="index.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to the main page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -36,14 +38,8 @@ if($user != 'Graeme') {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
-				<?php
-				if(!isset($_SESSION['login_user'])) {
-					echo "<p><a href='login.php'>Login</a></p>";
-				} else {
-					echo "<p><a href='sign_out.php'>Sign out</a></p>";
-				}
-				?>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
+				<p><a href='sign_out.php'>Sign out</a></p>
 			</div>
 		</div>
 		
@@ -58,6 +54,7 @@ if($user != 'Graeme') {
 		
 		<!-- The form to update an existing account -->
 		<div class="account_forms">
+
 			<!-- Link that goes back to index page -->
 			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Update an account</h1>
@@ -78,13 +75,13 @@ if($user != 'Graeme') {
 					</div>
 
 					<div class="entries">
-						<input type="text" name="current_username" placeholder="Enter the current username here">
+						<input type="text" name="current_username" id="current_username" placeholder="Enter the current username here">
 						<br><br>
-						<input type="text" name="new_username" placeholder="Enter the new username here">
+						<input type="text" name="new_username" id="new_username" placeholder="Enter the new username here">
 						<br><br>
-						<input type="password" name="new_password" placeholder="Enter the new password here">
+						<input type="password" name="new_password" id="new_password" placeholder="Enter the new password here">
 						<br><br>
-						<input type="email" name="new_email" placeholder="Enter the new email here">
+						<input type="email" name="new_email" id="new_email" placeholder="Enter the new email here">
 						<br><br>
 						<input type="submit" value="Update Account">
 					</div>
@@ -98,18 +95,25 @@ if($user != 'Graeme') {
 						
 			if(isset($_POST['current_username'])) {
 				$current_username = $_POST['current_username'];
-				$new_username = $_POST['new_password'];
+				$new_username = $_POST['new_username'];
 				$new_password = $_POST['new_password'];
 				$new_email = $_POST['new_email'];
+				
+				//Making sure that Graeme's admin properties cannot be removed by a change in username
+				if($current_username != 'Graeme') {
 
-				//Creating a variable to store the query to update users
-				$insert_query = "UPDATE graeme_music_user SET user_id = '$new_username', password = '$new_password', email = '$new_email' WHERE user_id = '$current_username'";
+					//Creating a variable to store the query to update users
+					$insert_query = "UPDATE graeme_music_user SET user_id = '$new_username', password = '$new_password', email = '$new_email' WHERE user_id = '$current_username'";
 
-				if (mysqli_query($conn,$insert_query)) {
-					echo "<p>Account updated</p>";
+					if (mysqli_query($conn,$insert_query)) {
+						echo "<p>Account updated</p>";
+					}
+					else {
+						echo "<p>Error updating account</p>";
+					}
 				}
 				else {
-					echo "<p>Error updating account</p>";
+					echo "<p>Cannot change properties of admin</p>";
 				}
 			}
 			?>

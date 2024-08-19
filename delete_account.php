@@ -11,7 +11,7 @@ if($user != 'Graeme') {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		
@@ -23,12 +23,14 @@ if($user != 'Graeme') {
 		<title>Graeme's Music</title>
 		
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="images/graeme_favicon_v2.png">
 	</head>
 	<body>
 		<!-- The header contains the logo, website name, and link to login or sign out -->
 		<div class="header">
 			<div class="logo">
-				<p>Logo placeholder</p>
+				<!-- Logo image that is also a link -->
+				<a href="index.php"><img src="images/graeme_music_logo_v2.png" alt="Goes to the main page"></a>
 			</div>
 			
 			<div class="header_text">
@@ -36,14 +38,8 @@ if($user != 'Graeme') {
 			</div>
 			
 			<div class="user_info">
-				<p>User icon placeholder</p>
-				<?php
-				if(!isset($_SESSION['login_user'])) {
-					echo "<p><a href='login.php'>Login</a></p>";
-				} else {
-					echo "<p><a href='sign_out.php'>Sign out</a></p>";
-				}
-				?>
+				<img src="images/graeme_user_icon_v2.png" alt="User Info">
+				<p><a href='sign_out.php'>Sign out</a></p>
 			</div>
 		</div>
 		
@@ -58,6 +54,7 @@ if($user != 'Graeme') {
 		
 		<!-- The form to delete an account -->
 		<div class="account_forms">
+
 			<!-- Link that goes back to index page -->
 			<p class="return_link"><a href="index.php">Return</a></p>
 			<h1>Delete an account</h1>
@@ -72,7 +69,7 @@ if($user != 'Graeme') {
 					</div>
 
 					<div class="entries">
-						<input type="text" name="username" placeholder="Enter the username here">
+						<input type="text" name="username" id="username" placeholder="Enter the username here">
 						<br><br>
 						<input type="submit" value="Delete Account">
 					</div>
@@ -83,18 +80,25 @@ if($user != 'Graeme') {
 			//Connection to the server
 			require "13CSI_Graeme_Music_Assessment_mysqli.php";
 			print "<p>Connected to the server</p>";
-						
+			
 			if(isset($_POST['username'])) {
 				$username = $_POST['username'];
+				
+				//Making sure that Graeme's account does not get deleted
+				if($username != 'Graeme') {
 
-				//Creating a variable to store the query to delete users
-				$insert_query = "DELETE FROM graeme_music_user WHERE user_id = '$username'";
+					//Creating a variable to store the query to delete users
+					$insert_query = "DELETE FROM graeme_music_user WHERE user_id = '$username'";
 
-				if (mysqli_query($conn,$insert_query)) {
-					echo "<p>Account deleted</p>";
+					if (mysqli_query($conn,$insert_query)) {
+						echo "<p>Account deleted</p>";
+					}
+					else {
+						echo "<p>Error deleting account</p>";
+					}
 				}
 				else {
-					echo "<p>Error deleting account</p>";
+					echo "<p>Cannot delete admin user</p>";
 				}
 			}
 			?>
