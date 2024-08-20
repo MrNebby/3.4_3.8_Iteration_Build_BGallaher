@@ -1,3 +1,4 @@
+<!-- Navigation that only admin users can see -->
 <nav>
 	<ul>
 		<li><a href="new_account.php">Add Account</a></li>
